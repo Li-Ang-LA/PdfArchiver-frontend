@@ -19,9 +19,18 @@ export default function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={token ? <Navigate to="/" replace /> : <Login onAuth={handleAuth} />} />
-      <Route path="/register" element={token ? <Navigate to="/" replace /> : <Register onAuth={handleAuth} />} />
-      <Route path="/" element={token ? <Dashboard token={token} onLogout={handleLogout} /> : <Navigate to="/login" replace />} />
+      <Route
+        path="/login"
+        element={token ? <Navigate to="/" replace /> : <Login onAuth={handleAuth} />}
+      />
+      <Route
+        path="/register"
+        element={token ? <Navigate to="/" replace /> : <Register onAuth={handleAuth} />}
+      />
+      <Route
+        path="/"
+        element={token ? <Dashboard token={token} onLogout={handleLogout} /> : <Navigate to="/login" replace />}
+      />
     </Routes>
   );
 }

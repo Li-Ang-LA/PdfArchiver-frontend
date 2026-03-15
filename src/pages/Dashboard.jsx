@@ -3,9 +3,12 @@ import { getMe } from "../api";
 
 export default function Dashboard({ token, onLogout }) {
   const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    getMe(token).then((data) => setUsername(data.username)).catch(() => onLogout());
+    getMe(token)
+      .then((data) => setUsername(data.username))
+      .catch(() => onLogout());
   }, [token]);
 
   return (

@@ -1,4 +1,4 @@
-const BASE = "https://viscid-benita-garlandless.ngrok-free.dev";
+const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 const COMMON_HEADERS = { "ngrok-skip-browser-warning": "1" };
 
